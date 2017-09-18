@@ -31,7 +31,7 @@ By default this module will only manage Crypt on macOS devices that are either:
 
 If you wish to install and configure it on all macOS devices, regardless of their state, set `crypt::force_install` to `true`.
 
-There have been issues with installing and configuring Crypt's modifcations to the Authorization database when there are no users configured on the system. To stop this happening, set `crypt::wait_for_user` to `true`.
+There have been issues with installing and configuring Crypt's modifications to the Authorization database when there are no users configured on the system. To stop this happening, set `crypt::wait_for_user` to `true`.
 
 Pass a list of files to watch for that if missing, will trigger an installation of the Crypt package via `crypt::crypt_files`. The defaults should be fine, unless the package has been modified.
 
