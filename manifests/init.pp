@@ -11,7 +11,7 @@ class crypt (
     '/Library/LaunchDaemons/com.grahamgilbert.crypt.plist',
     '/Library/Security/SecurityAgentPlugins/Crypt.bundle/Contents/MacOS/Crypt'
   ],
-  $wait_for_user = false,
+  $wait_for_user = true,
   $force_install = false
 ){
   if $facts['os']['family'] == 'Darwin' and
