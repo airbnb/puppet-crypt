@@ -20,7 +20,7 @@ crypt::crypt_files:
  - '/Library/LaunchDaemons/com.grahamgilbert.crypt.plist'
  - '/Library/Security/SecurityAgentPlugins/Crypt.bundle/Contents/MacOS/Crypt'
 crypt::wait_for_user: false
-crypt::force_installL: false
+crypt::force_install: false
 ```
 
 The path to the install package on your Puppet server. Defaults to `puppet:///modules/bigfiles/crypt/-${munkitools_version}.pkg`, which means that the install package should be in the `bigfiles` module, in `files/crypt`, named to match the version.
