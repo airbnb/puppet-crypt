@@ -40,4 +40,4 @@ Pass a list of files to watch for that if missing, will trigger an installation 
 * [macauthdb](https://github.com/macadmins/puppet-macauthdb)
 * [mac_facts](https://github.com/grahamgilbert/grahamgilbert-mac_facts)
 * [mac_profiles_handler](https://github.com/keeleysam/puppet-mac_profiles_handler)
-* munki
+* [munki](https://github.com/airbnb/puppet-munki)
