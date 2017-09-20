@@ -12,7 +12,8 @@ class crypt (
     '/Library/Security/SecurityAgentPlugins/Crypt.bundle/Contents/MacOS/Crypt'
   ],
   $wait_for_user = true,
-  $force_install = false
+  $force_install = false,
+  $output_path = '/var/root/crypt_output.plist'
 ){
   if $facts['os']['family'] == 'Darwin' and
   ($facts['mac_laptop'] == true or munki_item_installed('Crypt') or $force_install == true){

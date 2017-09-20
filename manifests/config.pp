@@ -1,9 +1,10 @@
 # Configures a Crypt client
 
 class crypt::config {
-  $server_url = $crypt::server_url
-  $remove_plist = $crypt::remove_plist
+  $server_url           = $crypt::server_url
+  $remove_plist         = $crypt::remove_plist
   $payload_organization = $crypt::payload_organization
+  $output_path          = $crypt::output_path
 
   $profile = {
     'PayloadContent' => [
@@ -15,6 +16,7 @@ class crypt::config {
                 'mcx_preference_settings' => {
                   'ServerURL' => $server_url,
                   'RemovePlist' => $remove_plist,
+                  'OutputPath' => $output_path,
                 }
               }
             ]
