@@ -38,6 +38,7 @@ Pass a list of files to watch for that if missing, will trigger an installation 
 
 ## Requirements
 * [apple_package](https://github.com/macadmins/puppet-apple_package)
+* [client_stdlib](https://github.com/macadmins/puppet-client_stdlib)
 * [macauthdb](https://github.com/macadmins/puppet-macauthdb)
 * [mac_facts](https://github.com/grahamgilbert/grahamgilbert-mac_facts)
 * [mac_profiles_handler](https://github.com/keeleysam/puppet-mac_profiles_handler)
