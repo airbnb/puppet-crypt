@@ -5,6 +5,8 @@ class crypt::install {
   $package_source = $crypt::package_source
   $crypt_files    = $crypt::crypt_files
   $output_path    = $crypt::output_path
+  $package_checksum    = $crypt::package_checksum
+  $package_receipt = $crypt::package_receipt
 
   $shortversion = crypt_version_trim($crypt_version)
 
@@ -21,9 +23,12 @@ class crypt::install {
   apple_package { 'Crypt':
     source        => $package_source,
     version       => $crypt_version,
-    receipt       => 'com.grahamgilbert.Crypt',
+    receipt       => $package_receipt,
     installs      => $crypt_files,
-    force_install => $force_install
+    force_install => $force_install,
+    http_checksum => $package_checksum,
+    http_username => $crypt::http_username,
+    http_password => $crypt:http_password
   }
 
   $plist = {

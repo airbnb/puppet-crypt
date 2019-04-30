@@ -13,7 +13,11 @@ class crypt (
   ],
   $wait_for_user = true,
   $force_install = false,
-  $output_path = '/var/root/crypt_output.plist'
+  $output_path = '/var/root/crypt_output.plist',
+  $package_receipt = 'com.grahamgilbert.Crypt',
+  $package_checksum = '',
+  $http_username = '',
+  $http_password = '',
 ){
   if $facts['os']['family'] == 'Darwin' and
   ($facts['mac_laptop'] == true or munki_item_installed('Crypt') or $force_install == true){
