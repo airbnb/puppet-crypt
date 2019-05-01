@@ -28,7 +28,7 @@ class crypt::install {
     force_install => $force_install,
     http_checksum => $package_checksum,
     http_username => $crypt::http_username,
-    http_password => $crypt:http_password
+    http_password => $crypt::http_password
   }
 
   $plist = {
