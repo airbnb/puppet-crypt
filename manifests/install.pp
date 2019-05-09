@@ -1,12 +1,13 @@
 # Installs Crypt
 class crypt::install {
 
-  $crypt_version  = $crypt::crypt_version
-  $package_source = $crypt::package_source
-  $crypt_files    = $crypt::crypt_files
-  $output_path    = $crypt::output_path
-  $package_checksum    = $crypt::package_checksum
-  $package_receipt = $crypt::package_receipt
+  $crypt_version    = $crypt::crypt_version
+  $package_source   = $crypt::package_source
+  $crypt_files      = $crypt::crypt_files
+  $crypt_directory  = $crypt::crypt_directory
+  $output_path      = $crypt::output_path
+  $package_checksum = $crypt::package_checksum
+  $package_receipt  = $crypt::package_receipt
 
   $shortversion = crypt_version_trim($crypt_version)
 
@@ -29,6 +30,15 @@ class crypt::install {
     http_checksum => $package_checksum,
     http_username => $crypt::http_username,
     http_password => $crypt::http_password
+  }
+
+  file { $crypt_directory:
+    ensure  => directory,
+    owner   => 0,
+    group   => 0,
+    mode    => '0755',
+    recurse => true,
+    require => Apple_package['Crypt']
   }
 
   $plist = {

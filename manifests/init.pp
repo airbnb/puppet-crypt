@@ -11,6 +11,7 @@ class crypt (
     '/Library/LaunchDaemons/com.grahamgilbert.crypt.plist',
     '/Library/Security/SecurityAgentPlugins/Crypt.bundle/Contents/MacOS/Crypt'
   ],
+  $crypt_directory = '/Library/Crypt',
   $wait_for_user = true,
   $force_install = false,
   $output_path = '/var/root/crypt_output.plist',
