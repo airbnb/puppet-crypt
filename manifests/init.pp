@@ -22,8 +22,8 @@ class crypt (
 ){
   if $facts['os']['family'] == 'Darwin' and
   ($facts['mac_laptop'] == true or munki_item_installed('Crypt') or $force_install == true){
-    class {'crypt::config': }
-    -> class {'crypt::install': }
+    class {'crypt::install': }
+    -> class {'crypt::config': }
     -> class {'crypt::service': }
     -> Class['crypt']
   }
