@@ -1,13 +1,14 @@
 # Installs and configures Crypt
 class crypt (
-  $crypt_version  = '3.0.0',
+  $crypt_version  = '4.0.0',
   $server_url = 'http://crypt',
   $remove_plist = true,
   $package_source = "puppet:///modules/bigfiles/crypt/Crypt-${crypt_version}.pkg",
   $payload_organization = 'Example Organization',
   $crypt_files = [
     '/Library/Crypt/checkin',
-    '/Library/Crypt/FoundationPlist.py',
+    '/Library/Crypt/python',
+    '/Library/Crypt/Python.framework',
     '/Library/LaunchDaemons/com.grahamgilbert.crypt.plist',
     '/Library/Security/SecurityAgentPlugins/Crypt.bundle/Contents/MacOS/Crypt'
   ],
