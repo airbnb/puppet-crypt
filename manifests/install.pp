@@ -13,10 +13,6 @@ class crypt::install {
 
   if versioncmp($facts['crypt_version'], $shortversion) > 0  {
     $force_install = true
-
-    # Bin the cached copy of the profile so it gets reinstalled
-    exec {"/bin/rm -f ${facts['puppet_vardir']}/mobileconfigs/com.grahamgilbert.crypt":
-    }
   } else {
     $force_install = false
   }
