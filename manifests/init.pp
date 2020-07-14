@@ -20,6 +20,7 @@ class crypt (
   $package_checksum = '',
   $http_username = '',
   $http_password = '',
+  $manage_profile = true,
 ){
   if $facts['os']['family'] == 'Darwin' and
   ($facts['mac_laptop'] == true or munki_item_installed('Crypt') or $force_install == true){

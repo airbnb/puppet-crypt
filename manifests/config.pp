@@ -5,6 +5,7 @@ class crypt::config {
   $remove_plist         = $crypt::remove_plist
   $payload_organization = $crypt::payload_organization
   $output_path          = $crypt::output_path
+  $manage_profile       = $crypt::manage_profile
 
   $profile = {
     'PayloadContent' => [
@@ -40,10 +41,12 @@ class crypt::config {
     'PayloadVersion' => 1
   }
 
-  mac_profiles_handler::manage { 'com.grahamgilbert.crypt':
-    ensure      => present,
-    file_source => plist($profile),
-    type        => 'template',
+  if $manage_profile {
+    mac_profiles_handler::manage { 'com.grahamgilbert.crypt':
+      ensure      => present,
+      file_source => plist($profile),
+      type        => 'template',
+    }
   }
 
   if versioncmp($facts['os']['macosx']['version']['major'], '10.11') > 0 {
