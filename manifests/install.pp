@@ -29,12 +29,13 @@ class crypt::install {
   }
 
   file { $crypt_directory:
-    ensure  => directory,
-    owner   => 0,
-    group   => 0,
-    mode    => '0755',
-    recurse => true,
-    require => Apple_package['Crypt']
+    ensure       => directory,
+    owner        => 0,
+    group        => 0,
+    mode         => '0755',
+    recurse      => true,
+    recurselimit => 1,
+    require      => Apple_package['Crypt']
   }
 
   $plist = {
